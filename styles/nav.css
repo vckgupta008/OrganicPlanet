@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    padding: 30px;
+}
+
+header {
+    font-family: gothamMedium;
+}
+
+.cart {
+    background-color: #CCC;
+    color: #FFF;
+    text-transform: uppercase;
+    float: right;
+    width: 85px;
+    text-align: center;
+    padding: 5px;
+    box-sizing: border-box;
+    position: relative;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.cart-count {
+    background-color: #fe0202;
+    position: absolute;
+    left: -7px;
+    font-size: 10px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    line-height: 1.5;
+}
+
+.cart span:last-child {
+    margin-left: -20px;
+}
+
+.cart img {
+    width: 80px;
+    position: absolute;
+    top: -28px;
+    left: 24px;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+nav {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+div.logo {
+    position: absolute;
+    top: 0;
+}
+
+.logo img {
+    width: 100px;
+    height: 100px;
+}
+
+ul.nav-links {
+    background-color: #000;
+    color: #FFF;
+    list-style-type: none;
+    padding: 0;
+    text-align: right;
+    margin-top: 16px!important;
+}
+
+ul.nav-links li {
+    display: inline-block;
+    text-transform: uppercase;
+    padding: 5px 15px;
+    font-size: 14px;
+}
+
+ul.nav-links li.active {
+    font-family: gothamRegular;
+}
+
+ul.nav-links li:not(.active):hover {
+    color: #828282;
+}
+
+ul.nav-links li a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.breadcrumb-op {
+    color: #d5d5d5;
+    margin-left: 110px;
+    margin-top: 35px;
+    font-family: gothamMedium;
+    font-size: 12px;
+}

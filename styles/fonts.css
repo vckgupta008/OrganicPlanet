@@ -1,0 +1,39 @@
+@font-face {
+    font-family: brandonBold;
+    src: url(../fonts/Brandon_bld.otf);
+}
+
+@font-face {
+    font-family: brandonMedium;
+    src: url(../fonts/Brandon_med.otf);
+}
+
+@font-face {
+    font-family: gothamBoldRegular;
+    src: url(../fonts/Gotham_Bold_Regular.ttf);
+}
+
+@font-face {
+    font-family: gothamBold;
+    src: url(../fonts/Gotham_Bold.otf);
+}
+
+@font-face {
+    font-family: gothamBook;
+    src: url(../fonts/Gotham_Book.otf);
+}
+
+@font-face {
+    font-family: gothamMedium;
+    src: url(../fonts/Gotham_Medium.otf);
+}
+
+@font-face {
+    font-family: gothamRegular;
+    src: url(../fonts/Gotham_Regular.otf);
+}
+
+@font-face {
+    font-family: grandHotelRegular;
+    src: url(../fonts/GrandHotel-Regular.otf);
+}
