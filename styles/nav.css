@@ -7,6 +7,15 @@ header {
     font-family: gothamMedium;
 }
 
+header:not(.home) {
+    position: fixed;
+    width: 96%;
+    z-index: 1;
+    background-color: #FFF;
+    top: 0;
+    padding-top: 30px;
+}
+
 .cart {
     background-color: #CCC;
     color: #FFF;
@@ -57,12 +66,16 @@ nav {
 
 div.logo {
     position: absolute;
-    top: 0;
+    top: -9px;
+}
+
+header.home div.logo {
+    top: -25px;
 }
 
 .logo img {
-    width: 100px;
-    height: 100px;
+    width: 140px;
+    height: 140px;
 }
 
 ul.nav-links {
@@ -96,8 +109,8 @@ ul.nav-links li a {
 
 .breadcrumb-op {
     color: #d5d5d5;
-    margin-left: 110px;
-    margin-top: 35px;
+    margin-left: 160px;
+    margin-top: 75px;
     font-family: gothamMedium;
     font-size: 12px;
 }

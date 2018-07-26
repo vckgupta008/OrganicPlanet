@@ -1,3 +1,12 @@
+body {
+    padding: 0 30px 30px;
+}
+
+main {
+    margin-top: 200px;
+    position: relative;
+}
+
 .product-header {
     text-transform: uppercase;
     background-size: cover;
@@ -34,20 +43,21 @@
 }
 
 main > div {
-    display: inline-block;
+    /* display: inline-block; */
 }
 
 .filters {
-    width: 302px;
+    width: 160px;
     margin-top: 25px;
-    position: relative;
-    top: 30px;
+    position: fixed;
+    /* top: 30px; */
     font-family: brandonMedium;
+    font-size: 12px;
 }
 
 .filters div {
     background-color: #ccc;
-    width: 200px;
+    width: 117px;
     color: #fff;
     margin: 5px;
     padding: 5px 10px;
@@ -78,10 +88,10 @@ main > div {
 }
 
 .products {
-    width: 930px;
+    /* width: 930px; */
     position: absolute;
     margin-top: 31px;
-
+    left: 160px;
 }
 
 ul.product-list {
@@ -89,6 +99,7 @@ ul.product-list {
     padding: 0;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 ul.product-list li {
@@ -196,6 +207,7 @@ ul.product-list li button.add-product:hover {
     visibility: hidden;
     transform: scale(0);
     transition: all 0s linear;
+    z-index: 50;
 }
 
 .overlay.show {

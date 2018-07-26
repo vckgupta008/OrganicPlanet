@@ -128,6 +128,21 @@ p.mini {
     width: 5%;
 }
 
+ol.carousel-indicators {
+    width: 9%;
+    left: 3%;
+    top: 48%;
+    margin-left: 0;
+}
+
+.carousel-inner {
+    height: 400px;
+}
+
+.carousel-indicators li {
+    background-color: #FFF;
+}
+
 button.shop-now {
     cursor: pointer;
     color: #FFF;
