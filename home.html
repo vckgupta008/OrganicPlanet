@@ -10,11 +10,10 @@
     <link rel="stylesheet" href="styles/fonts.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles/home.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="scripts/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
-    <script type='text/javascript' src='http://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js?ver=4.9.7'></script>    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>  
 </head>
 <body class="home">
     <header class="home">
@@ -112,8 +111,12 @@
             <h3 class="assort">Assorted Baskets</h3>
             <p class="assort-desc">Chosen from The Best of the Season</p>
 
-            <img class="basket super" src="images/stock-photo-wicker-basket-full-with-various-fresh-vegetables-on-white-315676313.jpg" />
-            <img class="basket mini" src="images/stock-photo-fresh-and-ripe-vegetables-arranged-in-a-basket-isolated-on-white-352326953.jpg" />
+            <img class="basket super" 
+                data-aos="fade-right" 
+                src="images/stock-photo-wicker-basket-full-with-various-fresh-vegetables-on-white-315676313.jpg" />
+            <img class="basket mini" 
+                data-aos="fade-left" data-aos-duration="2000"
+                src="images/stock-photo-fresh-and-ripe-vegetables-arranged-in-a-basket-isolated-on-white-352326953.jpg" />
             <svg version="1.1" id="tracesvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                 width="1231px" height="1250px" viewBox="0 0 1231 1250" enable-background="new 0 0 1231 1250" xml:space="preserve">
                 <path id="p1" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" stroke-miterlimit="0" 
@@ -155,14 +158,15 @@
                     d="M 180 130 C 162 148 145 160 140 160 " />
                     
             </svg>
-            <p class="super">Super basket</p>
-            <button type="button" id ="super-add" class="shop-now">Add to cart</button>
-            <p class="mini">Mini Basket</p>
-            <button type="button" id ="mini-add" class="shop-now">Add to cart</button>
+            <p class="super" data-aos="zoom-in">Super basket</p>
+            <button type="button" data-aos="fade-right" id ="super-add" class="shop-now">Add to cart</button>
+            <p class="mini" data-aos="fade-left">Mini Basket</p>
+            <button type="button" data-aos="fade-left" id ="mini-add" class="shop-now">Add to cart</button>
         </section>
     </main>
 </body>
 <script>
+    AOS.init();
     jQuery(function ($) {
 
         //On scroll call the draw function
