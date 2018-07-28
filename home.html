@@ -115,15 +115,45 @@
             <img class="basket super" src="images/stock-photo-wicker-basket-full-with-various-fresh-vegetables-on-white-315676313.jpg" />
             <img class="basket mini" src="images/stock-photo-fresh-and-ripe-vegetables-arranged-in-a-basket-isolated-on-white-352326953.jpg" />
             <svg version="1.1" id="tracesvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-            width="1231px" height="1250px" viewBox="0 0 1231 1250" enable-background="new 0 0 1231 1250" xml:space="preserve">
-                <path id="p1" fill="none" stroke="#000" stroke-width="10" stroke-linecap="round" stroke-miterlimit="0" 
-                    d="M 500 20 C 350 50 350 200 450 350 C 475 400 600 500 600 600 " />
-                <path id="p2" fill="none" stroke="#000" stroke-width="10" stroke-linecap="round" stroke-miterlimit="0" 
+                width="1231px" height="1250px" viewBox="0 0 1231 1250" enable-background="new 0 0 1231 1250" xml:space="preserve">
+                <path id="p1" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" stroke-miterlimit="0" 
+                    d="M 500 20 
+                        C 350 50 350 200 450 350 
+                        C 475 400 600 500 600 650 
+                        C 600 950 200 950 150 650 
+                        C 300 550 440 700 500 850 
+                        C 650 1350 1000 1150 1100 950
+                        C 1050 700 900 800 900 820 " />
+                <!-- <path id="p2" fill="none" stroke="#000" stroke-width="10" stroke-linecap="round" stroke-miterlimit="0" 
                     d="M 600 650 C 550 900 200 900 150 650 " />
                 <path id="p3" fill="none" stroke="#000" stroke-width="10" stroke-linecap="round" stroke-miterlimit="0" 
                     d="M 350 620 C 400 650 440 700 500 850 C 650 1250 1000 1150 1100 950 " />
                 <path id="p4" fill="none" stroke="#000" stroke-width="10" stroke-linecap="round" stroke-miterlimit="0" 
-                    d="M 1100 900 C 1050 700 900 800 900 820 " />
+                    d="M 1100 900 C 1050 700 900 800 900 820 " /> -->
+            </svg>
+            <svg version="1.1" id="super" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                width="200px" height="200px" viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve">
+                <path id="s1" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" stroke-miterlimit="0" 
+                    d="M 170 80 C 160 70 150 56 140 40 " />
+                <path id="s2" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" stroke-miterlimit="0" 
+                    d="M 160 95 C 155 95 140 90 120 80 " />
+                <path id="s3" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" stroke-miterlimit="0" 
+                    d="M 167 115 C 155 120 140 125 125 120 " />
+                <path id="s4" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" stroke-miterlimit="0" 
+                    d="M 180 130 C 162 148 145 160 140 160 " />
+                    
+            </svg>
+            <svg version="1.1" id="mini" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                width="200px" height="200px" viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve">
+                <path id="m1" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" stroke-miterlimit="0" 
+                    d="M 170 80 C 160 70 150 56 140 40 " />
+                <path id="m2" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" stroke-miterlimit="0" 
+                    d="M 160 95 C 155 95 140 90 120 80 " />
+                <path id="m3" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" stroke-miterlimit="0" 
+                    d="M 167 115 C 155 120 140 125 125 120 " />
+                <path id="m4" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" stroke-miterlimit="0" 
+                    d="M 180 130 C 162 148 145 160 140 160 " />
+                    
             </svg>
             <p class="super">Super basket</p>
             <button type="button" id ="super-add" class="shop-now">Add to cart</button>
@@ -142,8 +172,11 @@
 
         //If you have more than one SVG per page this will pick it up
         function drawLines(){ 
-            
-            $.each($("path"), function(i, val){
+            $.each($("#super path"), function(i, val){
+                var line = val;
+                drawLine($(this), line);
+            });
+            $.each($("#mini path"), function(i, val){
                 var line = val;
                 drawLine($(this), line);
             });
@@ -159,10 +192,31 @@
         length = percentDone * pathLength;
         line.style.strokeDasharray = [length,pathLength].join(' ');
         
-        // console.log("strokeDasharray: "+[length,pathLength].join(' '));
+        console.log("strokeDasharray: "+[length,pathLength].join(' '));
         }
     });
 
+    // Get the id of the <path> element and the length of <path>
+    var triangle = document.getElementById("p1");
+    var length = triangle.getTotalLength();
+
+    // The start position of the drawing
+    triangle.style.strokeDasharray = length;
+
+    // Hide the triangle by offsetting dash. Remove this line to show the triangle before scroll draw
+    triangle.style.strokeDashoffset = length;
+
+    // Find scroll percentage on scroll (using cross-browser properties), and offset dash same amount as percentage scrolled
+    window.addEventListener("scroll", myFunction);
+
+    function myFunction() {
+    var scrollpercent = (document.body.scrollTop + document.documentElement.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
+
+    var draw = length * scrollpercent * 1;
+    
+    // Reverse the drawing (when scrolling upwards)
+    triangle.style.strokeDashoffset = length - draw;
+}
     
 
 </script>
