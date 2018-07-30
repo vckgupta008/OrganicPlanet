@@ -92,6 +92,8 @@ main > div {
     position: absolute;
     margin-top: 31px;
     left: 160px;
+    margin-right: 76px;
+    margin-left: 54px;
 }
 
 ul.product-list {
@@ -99,14 +101,14 @@ ul.product-list {
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 ul.product-list li {
-    width: 260px;
+    width: 264px;
     height: 250px;
     /* box-sizing: border-box; */
-    margin: 20px 73px 20px 0;
+    margin: 20px 15px 20px 0;
     text-align: center;
 }
 
@@ -121,8 +123,8 @@ ul.product-list li > div {
 ul.product-list li img {
     /* position: absolute; */
     /* clip: rect(20px,400px,300px,50px); */
-    width: 260px;
-    height: 168px;
+    width: 262px;
+    height: 202px;
     border-radius: 10px;
     border: 1px solid #e8e8e8;
 }
@@ -180,12 +182,13 @@ button.add-product {
     color: #FFF;
     background-color: #000;
     text-transform: uppercase;
-    padding: 5px 20px;
+    padding: 3px 12px;
     border: 1px solid;
     border-radius: 16px;
     outline: 0;
-    margin-top: 20px;
+    margin-top: 7px;
     font-family: brandonMedium;
+    font-size: 10px;
     -moz-transition: all 0.3s;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
